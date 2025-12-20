@@ -11,4 +11,11 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  optimizeDeps: {
+    exclude: ["@silvia-odwyer/photon"],
+  },
+  assetsInclude: ["**/*.wasm"],
+  worker: {
+    format: "es",
+  },
 })

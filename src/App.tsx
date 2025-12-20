@@ -1,9 +1,12 @@
+import { Editor } from "@/components/editor";
+import { ProjectProvider } from "@/contexts/project-context";
+
 export function App() {
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      <div className="font-medium">Hello World</div>
-    </div>
-  )
+    <ProjectProvider>
+      <Editor />
+    </ProjectProvider>
+  );
 }
 
-export default App
+export default App;
