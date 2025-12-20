@@ -52,13 +52,21 @@ export function LoadImageDialog({ open: controlledOpen, onOpenChange, autoOpen =
 
   const handleLoad = () => {
     if (sourceType === "url" && url.trim()) {
-      setImageSource({ type: "url", url: url.trim() })
+      setImageSource({
+        type: "url",
+        identifier: `temp-url-${Date.now()}`,
+        url: url.trim()
+      })
       setOpen(false)
       setUrl("")
     } else if (sourceType === "local" && file) {
       // For local files, create an object URL
       const objectUrl = URL.createObjectURL(file)
-      setImageSource({ type: "local", path: objectUrl })
+      setImageSource({
+        type: "local",
+        identifier: `temp-local-${Date.now()}`,
+        path: objectUrl
+      })
       setOpen(false)
       setFile(null)
       if (fileInputRef.current) {

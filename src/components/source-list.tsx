@@ -2,7 +2,6 @@ import * as React from "react"
 import { useProject } from "@/contexts/project-context"
 import { loadImageSourceToData } from "@/lib/image-loader"
 import { Badge } from "@/components/ui/badge"
-import { cn } from "@/lib/utils"
 
 interface SourceThumbnail {
     identifier: string
